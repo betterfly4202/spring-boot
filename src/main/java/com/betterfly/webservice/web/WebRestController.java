@@ -2,6 +2,7 @@ package com.betterfly.webservice.web;
 
 import com.betterfly.webservice.domain.posts.PostsRepository;
 import com.betterfly.webservice.domain.posts.PostsSaveRequestDto;
+import com.betterfly.webservice.service.PostsService;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class WebRestController {
     private PostsRepository postsRepository;
+    private PostsService postsService;
 
     @GetMapping(value = "/hello")
     public String hello(){
@@ -22,9 +24,9 @@ public class WebRestController {
     }
 
     @PostMapping(value = "/posts")
-    public void savePosts(
+    public Long savePosts(
             @RequestBody PostsSaveRequestDto dto){
-        postsRepository.save(dto.toEntity());
+        return postsService.save(dto);
     }
 
     @PostMapping(value = "/postsMan")
