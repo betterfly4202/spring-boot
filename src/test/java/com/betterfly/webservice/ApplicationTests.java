@@ -1,4 +1,4 @@
-package com.betterfly.springboot;
+package com.betterfly.webservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
