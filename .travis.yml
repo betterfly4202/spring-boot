@@ -39,7 +39,7 @@ deploy:
     bucket: webservice-deploy-s3 # S3 버킷
     key : webservice.zip
     bundle_type: zip
-    application : wevservice # 웹 콘솔에 등록한 Code deploy 어플리케이션명
+    application : webservice # 웹 콘솔에 등록한 Code deploy 어플리케이션명
     deployment_group: webservice-deploy-group
     region: ap-northeast-2
     wait-until-deployed: true
