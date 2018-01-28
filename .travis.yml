@@ -33,6 +33,20 @@ deploy:
       repo: betterfly88/spring-boot #Github
       branch: master
 
+  - provider: codedeploy
+      access_key_id: $AWS_ACCESS_KEY # Travis repo settings에 설정된 값
+      secret_access_key: $AWS_SECRET_KEY # Travis repo settings에 설정된 값
+      bucket: webservice-deploy-s3 # S3 버킷
+      key : webservice.zip
+      bundle_type: zip
+      application : wevservice # 웹 콘솔에 등록한 Code deploy 어플리케이션명
+      deployment_group: webservice-deploy-group
+      region: ap-northeast-2
+      wait-until-deployed: true
+      on:
+        repo: betterfly88/spring-boot #Github
+        branch: master
+
 
 #CI 실행 완료 후 메일알림
 notifications:
