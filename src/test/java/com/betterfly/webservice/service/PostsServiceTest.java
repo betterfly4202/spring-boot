@@ -42,11 +42,11 @@ public class PostsServiceTest {
                 .build();
 
         //When
-        postsService.findAllDesc();
-
-        //then
-        Posts posts =postsRepository.findAll().get(0);
-        assertThat(posts.getTitle());
+//        postsService.findAllDesc();
+//
+//        //then
+//        Posts posts =postsRepository.findAll().get(0);
+//        assertThat(posts.getTitle());
 //        assertThat(posts.getTitle()).isEqualTo(dto.getTitle());
 //        assertThat(posts.getContent()).isEqualTo(dto.getContent());
 //        assertThat(posts.getAuthor()).isEqualTo(dto.getAuthor());

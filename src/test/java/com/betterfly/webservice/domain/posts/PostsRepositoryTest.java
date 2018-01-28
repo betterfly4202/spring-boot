@@ -41,9 +41,9 @@ public class PostsRepositoryTest {
         //given
         LocalDateTime now = LocalDateTime.now();
         postsRepository.save(Posts.builder()
-                .title("첫번쨰 테스트")
-                .content("테스트 내용")
-                .author("betterFLY")
+                .title("테스트1")
+                .content("테스트1의 본문")
+                .author("test1@gmail.com")
                 .build()
         );
 
@@ -52,8 +52,8 @@ public class PostsRepositoryTest {
 
         //then
         Posts posts = postsList.get(0);
-        assertThat(posts.getTitle(), is("첫번쨰 테스트"));
-        assertThat(posts.getContent(), is("테스트 내용"));
+        assertThat(posts.getTitle(), is("테스트1"));
+        assertThat(posts.getContent(), is("테스트1의 본문"));
         assertTrue(posts.getCreatedDate().isAfter(now));
         assertTrue(posts.getModifiedDate().isAfter(now));
     }
