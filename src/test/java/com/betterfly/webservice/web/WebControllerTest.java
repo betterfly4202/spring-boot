@@ -28,6 +28,6 @@ public class WebControllerTest {
         String body = this.restTemplate.getForObject("/", String.class);
 
         //Then
-        assertThat(body).contains("스프링 부트를 사용해서 웹을 구축해 봅니다.");
+        assertThat(body).contains("스프링 부트를 사용해서 웹을 구축해");
     }
 }
